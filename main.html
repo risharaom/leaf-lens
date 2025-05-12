@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="back.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf Lens</title>
+    <style>
+        /* Hide the default file input button */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Style the custom button */
+        .custom-button {
+            background-color: #4CAF50; /* Green background */
+            color: white;              /* White text */
+            padding: 10px 50px;        /* Padding */
+            border: none;              /* No border */
+            cursor: pointer;          /* Pointer cursor */
+            font-size: 16px;           /* Font size */
+        }
+
+        .custom-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Leaf Lens</h1>
+        <img src="https://images.freeimages.com/image/thumbs/ae1/green-leaf-stroke-adorable-png-art-5696996.png" id="myImage">
+    </header>
+
+    <div class="container">
+        <div class="left">
+            <h2>Why?</h2>
+            <h5>Our platform lets you upload satellite images and automatically calculates how much tree cover is in a specific area. But this tool is more than just about analyzing data—it’s about environmental justice. Tree coverage is linked to things like air quality, temperature control, and access to green spaces—resources that aren’t always equally available to everyone. By identifying areas with low greenery, we want to highlight these disparities and help guide efforts toward more balanced urban planning, reforestation, and climate resilience.
+
+                Our mission is to create a cleaner, healthier planet where everyone, no matter where they live, has access to green space and clean air. Every image we analyze brings us one step closer to building a future that prioritizes sustainability and environmental awareness. Together, we can drive change and make sure our cities and communities become more inclusive, eco-friendly, and supportive of everyone’s well-being.
+                
+                By combining technology with environmental science, we’re working to make it easier for people, organizations, and decision-makers to identify areas that need more natural resources. Whether you’re a city planner, an environmental advocate, or just someone who cares about the planet, this tool is a way to see the problem clearly and take action for a greener, more sustainable future.</h5>
+        </div>
+        <div class="right">
+            <h2>Upload an Image</h2>
+            <h5> Upload a satellite image of your city to analyze how many trees/greenery are in the area </h5>
+            <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" id="fileInput" accept="image/*" required onchange="checkFileUpload()">
+                <!-- Custom button to trigger file input -->
+                <button type="button" class="custom-button" onclick="document.getElementById('fileInput').click();">
+                    Choose Image
+                </button>
+                <p id="uploadStatus" style="color: green; display: none;">Image has been uploaded!</p>
+                <p id="uploadError" style="color: red; display: none;">No image selected yet.</p>
+                <button type="button" class="custom-button" id="myButton" onclick="showTree()">Calculate</button>
+            </form>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
