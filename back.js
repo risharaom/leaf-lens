@@ -12,7 +12,7 @@ async function showTree() {
     formData.append("image", file);
 
     // Send the image to the Flask server
-    const response = await fetch("http://127.0.0.1:5000/upload", {
+    const response = await fetch("https://rishalightbulb.pythonanywhere.com/upload", {
         method: "POST",
         body: formData
     });
